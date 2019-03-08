@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carroo</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="./index.js"></script> 
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div ng-app="app">
+        <div ng-controller="CarouselDemoCtrl" id="slides_control">
+          <div>
+            <carousel interval="myInterval">
+              <slide ng-repeat="slide in slides" active="slide.active">
+                  <img ng-src="{{slide.image}}">
+                  <div class="carousel-caption">
+                    </div>
+                </slide>
+            </carousel>
+    </div>
+    <h4>Slide {{$index+1}}</h4>
+  </div>
+      </div> 
+        
+    
+</body>
+</html>

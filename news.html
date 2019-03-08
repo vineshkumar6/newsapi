@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en"  >
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>EveryWhere News</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="cssfile.css">
+        
+        
+        <script src="wether.js"></script> 
+        
+        
+       
+
+
+       
+</head>
+<body ng-app="News" ng-controller="news_app_controller" >
+        <header>
+               <p align="right">FOLLOW US ON </p>
+             </header>
+             <img src="v.png" class="v">
+    <div class="home">
+<br><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspinesh</p> <div class="vl"></div><div id="MyClockDisplay" class="clock"></div>
+
+
+
+<div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#home">Features</a>
+        <a href="#home">Sports</a>
+        <a href="#home">Helth</a>
+        <a href="#home">Travel</a>
+        <a href="#home">Food</a>
+        <a href="#home">Education</a>
+        <div class="dropdown">
+            <button class="dropbtn">Entertime 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#home">Gallery</a>
+                <a href="#home">Video</a> 
+                <a href="#home">Movie</a>  
+            </div>
+          </div> 
+           <a href="#home">Astrology</a>
+      </div>
+
+   
+<script type="text/javascript">
+
+    function showTime(){
+        var date = new Date();
+        var h = date.getHours(); // 0 - 23
+        var m = date.getMinutes(); // 0 - 59
+        var s = date.getSeconds(); // 0 - 59
+        var session = "AM";
+        var DD = date.getDate();
+        var MM = date.getMonth() + 1;
+       
+        var YYYY = date.getFullYear();
+        
+        if(h >= 12){
+            h = h - 12;
+            session = "PM";
+        }
+
+        if(h == 0){
+            h = 12;
+        }
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+
+        var time = h + ":" + m + ":" + s + " " + session + "  " + DD +"/" + MM +"/" + YYYY ;
+        document.getElementById("MyClockDisplay").innerText = time;
+        document.getElementById("MyClockDisplay").textContent = time;
+
+        setTimeout(showTime, 1000);
+    }
+
+    showTime();
+
+</script>
+
+    
+    <div class="d"></div>
+<br>
+<div class="nav"></div>
+
+<nav>
+    <h1>Latest News</h1>
+
+      <div ng-repeat="news in newss" class="container">
+        <div class="page-header">
+        </div>
+        <img data-ng-src="{{news.urlToImage}}" alt="Notebook" style="width:100%; height: 50%;">
+        <div  class="content">
+          <h1><a href="" style="color: #333;">{{news.title}}</a></h1><br>
+          <ul><a href="" style="color: #333;"><li>{{news.description}}</li></a><br>
+            <a data-ng-href="{{news.url}}" style="color: #ccc">For more</a><br>
+            <div class="bottom-right"> <a href="" style="color: #ccc;"></a>
+            </div> 
+        
+        </ul>
+        <br>
+        <div class="container">
+
+        </div>
+    </div>
+
+    
+
+
+
+      </div>
+      <div class="a1">
+            <div class="left1">
+              <a href=""><img src="l.jpg" alt="Notebook" style="width:115%; height: 50%;"></a>
+              <h1><a href="">Medicine to Counter Nipah Virus Brought to Kozhikode</a></h1>
+              <a href=""><li>Nipah virus: Goa govt to ask doctors to stay vigilant</li></a>
+              <a href=""><li>Lini always wished to see me as a govt employee, says Sajeesh</li></a>
+            </div>
+            
+            <div class="right1">
+              <a href=""><img src="r.jpg" alt="Notebook" style="width:95%; height: 10%;"></a>
+              <h1><a href="">Govt gives 20 lakh to Lini's children, govt job to husband</a></h1>
+              <a href=""><li>2 showing Nipah symptoms under treatment;stern action against rumour mongers</li></a>
+              <a href=""><li>Kodiyeri welcomes SNDP stand in Chengannur bypoll</li></a>
+          
+            </div>
+           
+        </div>
+     <br>
+   
+    </nav>
+  
+  <article>
+    <h1>Today's Special</h1>
+    <a href=""><img src="t.jpg" alt="Notebook" style="width:100%; height: 20%;"></a><br>
+    <a href="" style="color: #333">ftaar party at home? Try Mutton Badam Korma</a><br>
+    <br>
+    <p></p>
+    <div class="d" style="width: 320px;  height: 8px;"></div><br>
+    <a href="" style="color: lightgreen;">Kerala</a><br>
+    <a href="" style="color: #333;">Actor Vijayan Peringode Passes away</a><br>
+    <div class="d" style="width: 320px;  height: 8px;"></div><br>
+    <a href="" style="color: aqua;">News & Updates</a><br>
+    <a href="" style="color: #333;">Vinesh professional course seminar 'Ask Expert' on Wednesday in T'vm</a><br>
+    <div class="d" style="width: 320px;  height: 8px;"></div><br>
+    <a href="" style="color: red;">Movie News</a><br>
+    <a href="" style="color: #333;">Shweta Bachchan makes acting debut in Kalyan Jewllers TV commercial</a><br>
+    <div class="d" style="width: 320px;  height: 8px;"></div><br>
+    <br> 
+  
+   </article>
+  
+   <div class="arti1">
+        <h2>Columns</h2>
+        <div class="ct1">
+            <a href=""><img src="c1.jpg" alt="Notebook" style="width:100%; height: 30%;"></a><br>
+            <div class="top-right">Parenting</div>
+        </div>
+            <br>
+            <a href="" style="color: darkblue">Motherhood: A new Beginning</a>
+            <br>
+            <br>
+            <a href="" style="color: black;">Second Sunday of May every year is observed and celebrated as the Mother's</a>
+            <div class="d" style="width: 320px;  height: 8px;"></div><br>
+            <br>
+            <a href="" style="color: red;">Sandhya Varma</a>
+            <br>
+            <br>
+            
+    </div>
+
+<div ng-repeat="news in newss">
+    <h1> {{1news.title}}</h1><br><br><br>
+    
+</div>
+
+<div ng-controller="myCtrl">
+    
+        {{ city }}
+      <span class="today">Today</span>
+      </span> 
+          <sup>{{temperature}}</sup>
+          <span class="unit">c</span>
+        </span>
+        
+<!-- <i class="wi wi-night-sleet"></i>   -->
+<div id="icon"><img id="wicon" src={{wicon}} alt="Weather icon"></div></div>
+    
+</div>
+
+    <div class="d"></div>
+
+   <footer>Copyright &copy;Winslet2.wixsite.com</footer>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <script src="newsController.js"></script>
+</body>
+</html>
